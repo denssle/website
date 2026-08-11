@@ -9,8 +9,6 @@
 	--akzent-text: #ffffff;
 	--live-grund: #e2f0ea;
 	--live-text: #1f6f5c;
-	--arbeit-grund: #f6ecd9;
-	--arbeit-text: #7a5a12;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,8 +22,6 @@
 		--akzent-text: #10201b;
 		--live-grund: #1d332c;
 		--live-text: #7fd3ba;
-		--arbeit-grund: #33291a;
-		--arbeit-text: #d9b871;
 	}
 }
 
@@ -179,11 +175,6 @@ a:hover {
 .status--live {
 	background: var(--live-grund);
 	color: var(--live-text);
-}
-
-.status--arbeit {
-	background: var(--arbeit-grund);
-	color: var(--arbeit-text);
 }
 
 .technik {

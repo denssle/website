@@ -108,8 +108,8 @@ tail -20 ~/logs/webserver/error_log_apache
 Die Projektbeschreibungen stehen als Klartext in `public/index.html` und
 `public/en/index.html`, eine `<li class="projekt">` je Projekt. Ein neues
 Projekt ist ein weiterer solcher Block **in beiden Dateien**; die Statusmarke
-gibt es in drei Ausprägungen: `status--live`, `status--arbeit` und ohne
-Zusatzklasse (neutral).
+gibt es in zwei Ausprägungen: `status--live` (grün) und ohne Zusatzklasse
+(neutral, für alles ohne eigene Weboberfläche).
 
 Das GitHub-Icon steht einmal je Datei als `<symbol id="icon-github">` am
 Anfang des `<body>` und wird per `<use href="#icon-github">` eingesetzt.

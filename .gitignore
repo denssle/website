@@ -1,3 +1,4 @@
-node_modules/
+# IDE-Konfiguration bleibt lokal
+.idea/
+
 .DS_Store
-*.log
