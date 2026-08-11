@@ -279,6 +279,55 @@ a:hover {
 	text-underline-offset: 0.2em;
 }
 
+.fuss-navi {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.3rem 1rem;
+	margin-top: 0.6rem;
+	font-size: 0.875rem;
+}
+
+/* Rechtstexte */
+
+/* Fließtext statt Karten: hier zählt Lesbarkeit, nicht Übersicht. Die Breite
+   ist enger als der Rest der Seite, damit die Zeilen nicht zu lang werden. */
+.rechtstext {
+	max-width: 38rem;
+}
+
+.rechtstext h2 {
+	margin: 2.5rem 0 0.6rem;
+	font-size: 1.25rem;
+	letter-spacing: -0.01em;
+}
+
+.rechtstext > :first-child {
+	margin-top: 0;
+}
+
+.rechtstext p,
+.rechtstext ul {
+	margin: 0 0 0.9rem;
+}
+
+.rechtstext ul {
+	padding-left: 1.25rem;
+}
+
+.rechtstext li {
+	margin-bottom: 0.25rem;
+}
+
+/* Vorbehalt über der englischen Übersetzung. */
+.hinweis-kasten {
+	padding: 0.8rem 1rem;
+	border: 1px solid var(--linie);
+	border-radius: 10px;
+	background: var(--karte);
+	color: var(--text-leise);
+	font-size: 0.9375rem;
+}
+
 /* Sichtbarer Fokus für Tastaturbedienung – der Browser-Standard verschwindet
    auf den farbigen Flächen. */
 a:focus-visible {

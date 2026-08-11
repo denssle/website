@@ -12,10 +12,12 @@ liegt in `public/`; ein Push auf `main` synct es nach `~/html` auf dem Uberspace
 
 ```
 public/
-├── index.html      Deutsche Fassung (Standard), erreichbar unter /
+├── index.html        Deutsche Fassung (Standard), erreichbar unter /
+├── datenschutz.html  Datenschutzhinweise
 ├── en/
-│   └── index.html  Englische Fassung, erreichbar unter /en/
-└── style.css       Gestaltung für beide (hell/dunkel über prefers-color-scheme)
+│   ├── index.html    Englische Fassung, erreichbar unter /en/
+│   └── privacy.html  Datenschutz, englisch (verbindlich ist die deutsche Fassung)
+└── style.css         Gestaltung für alle (hell/dunkel über prefers-color-scheme)
 ```
 
 **Beide Sprachfassungen sind eigenständige Dateien** – bewusst so, damit die

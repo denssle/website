@@ -19,6 +19,21 @@
 			hreflang="x-default"
 			href="https://enzlor.uber.space/"
 		/>
+		<!-- Vorschaukarte in Messengern und sozialen Netzen. Ohne og:image wird
+		     eine reine Textkarte gezeigt – immer noch besser als die nackte URL.
+		     Die absoluten URLs müssen wie die hreflang-Angaben mitgezogen werden,
+		     wenn die Seite auf eine eigene Domain umzieht. -->
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Dominik Hellweg" />
+		<meta property="og:title" content="Dominik Hellweg – Projects" />
+		<meta
+			property="og:description"
+			content="An overview of my projects: a planner for private events and a Discord bot."
+		/>
+		<meta property="og:url" content="https://enzlor.uber.space/en/" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:locale:alternate" content="de_DE" />
+		<meta name="twitter:card" content="summary" />
 		<link
 			rel="icon"
 			href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='13'>🛠️</text></svg>"
@@ -126,6 +141,9 @@
 			<p class="fuss-hinweis">
 				Note: the linked projects themselves have German-language interfaces.
 			</p>
+			<nav class="fuss-navi" aria-label="Legal">
+				<a href="privacy.html">Privacy</a>
+			</nav>
 		</footer>
 	</body>
 </html>
