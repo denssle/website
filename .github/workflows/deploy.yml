@@ -26,15 +26,20 @@ jobs:
       #
       # ACHTUNG --delete: ~/html ist das DocumentRoot des Apache-Backends und wird
       # zum Spiegel von public/. Alles andere, was dort liegt, wird geloescht.
-      # Dieser Workflow darf deshalb erst laufen, NACHDEM festival aus ~/html
-      # umgezogen ist (siehe README, Abschnitt "Einmalige Einrichtung").
+      # Das ist am 2026-08-11 passiert: festival lag damals noch in ~/html und
+      # verlor bei diesem Deploy build/, package.json und seine .env - die App
+      # fiel eine Stunde spaeter aus. Seither deployt festival nach
+      # ~/festival-app, der Docroot gehoert allein diesem Projekt.
+      #
+      # --exclude=".well-known": das Verzeichnis stammt nicht aus public/ (ACME-
+      # Challenges u. ae.) und darf von --delete nicht mitgenommen werden.
       #
       # --chmod=D755,F644: sonst uebernimmt rsync die Rechte des Runners und der
       # Webserver kommt nicht an die Dateien.
       - name: rsync deployments
         uses: burnett01/rsync-deployments@7.1.0
         with:
-          switches: -avzr --delete --chmod=D755,F644
+          switches: -avzr --delete --exclude=".well-known" --chmod=D755,F644
           path: /public/
           remote_path: /home/${{ secrets.UBERSPACE_USER }}/html/
           remote_host: ${{ secrets.UBERSPACE_HOST }}

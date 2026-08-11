@@ -57,24 +57,21 @@ Der Umweg über die Datei ist Absicht: beim Einfügen über die Zwischenablage g
 regelmäßig Zeilenumbrüche verloren, die Folge ist
 `Error loading key "(stdin)": error in libcrypto`.
 
-## Einmalige Einrichtung auf dem Server
+## Einrichtung auf dem Server (erledigt am 2026-08-11)
 
-**Diese Schritte müssen vor dem ersten Deployment erledigt sein.** `~/html` ist
-bisher das Verzeichnis der Festival-Anwendung; der Workflow oben macht es zum
-Spiegel von `public/` und löscht dabei alles andere darin. Solange Festival noch
-dort liegt, würde der erste Deploy es mitnehmen.
+`~/html` ist der Apache-Docroot und der Workflow oben macht ihn zum Spiegel von
+`public/` – alles andere darin wird gelöscht. Deshalb musste die
+Festival-Anwendung, die vorher dort lag, erst umziehen. Beides ist erledigt:
 
-**1. Festival umziehen** (im Repository `denssle/festival`):
+**1. Festival umgezogen** (im Repository `denssle/festival`):
 
-- `svelte.config.js`: `kit.paths.base = '/festival'` setzen. Ohne das zeigen nach
-  dem Umzug sämtliche internen Links und Asset-Pfade der Anwendung weiterhin auf
-  die Wurzel und laufen ins Leere.
-- `.github/workflows/deploy.yml`: `remote_path` auf
-  `/home/${{ secrets.UBERSPACE_USER }}/festival/` ändern.
-- Auf dem Host `~/etc/services.d/festival.ini` auf das neue Verzeichnis zeigen
-  lassen, dann `supervisorctl reread && supervisorctl update`.
+- `svelte.config.js`: `kit.paths.base = '/festival'` gesetzt. Ohne das zeigen
+  sämtliche internen Links und Asset-Pfade weiterhin auf die Wurzel.
+- `remote_path` im dortigen `deploy.yml` auf `~/festival-app` geändert.
+- Auf dem Host zeigt `~/etc/services.d/festival.ini` per `directory=` auf
+  `/home/enzlor/festival-app` (danach `supervisorctl reread && supervisorctl update`).
 
-**2. Backends umregistrieren:**
+**2. Backends registriert:**
 
 ```bash
 uberspace web backend set /festival --http --port 5173
@@ -87,6 +84,13 @@ zwischenzeitlich unter keiner URL erreichbar. Der Pfad wird mitsamt Präfix ans
 Backend durchgereicht – deshalb muss `paths.base` in Festival dazu passen.
 
 **3. Erst danach** hier auf `main` pushen.
+
+> **Was schiefging:** Schritt 3 lief vor Schritt 1. Der Deploy räumte `~/html`
+> leer und nahm dabei die `.env` der Festival-Anwendung mit (gitignored, nur auf
+> dem Host, ohne Backup außerhalb von `/backup/daily.*`). Die App lief zunächst
+> weiter, weil ihr Code im Speicher lag, und fiel erst eine Stunde später beim
+> ersten Request aus, der ein Asset von der Platte brauchte. Die Reihenfolge oben
+> ist kein Formalismus.
 
 ## Prüfen
 
