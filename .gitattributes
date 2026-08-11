@@ -1,0 +1,3 @@
+# Im Repository immer LF, unabhängig vom Betriebssystem des Arbeitsplatzes.
+# Der Deploy-Runner (Linux) synct die Dateien so, wie sie hier liegen.
+* text=auto eol=lf

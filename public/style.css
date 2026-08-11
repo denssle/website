@@ -1,0 +1,303 @@
+/* Farben als Tokens, damit der Dunkelmodus nur die Werte tauscht und nicht die Regeln. */
+:root {
+	--grund: #fbfaf8;
+	--karte: #ffffff;
+	--text: #1c1b19;
+	--text-leise: #5d5a54;
+	--linie: #e3dfd8;
+	--akzent: #1f6f5c;
+	--akzent-text: #ffffff;
+	--live-grund: #e2f0ea;
+	--live-text: #1f6f5c;
+	--arbeit-grund: #f6ecd9;
+	--arbeit-text: #7a5a12;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--grund: #16181a;
+		--karte: #1e2124;
+		--text: #eceae6;
+		--text-leise: #a3a09a;
+		--linie: #32363a;
+		--akzent: #5fbfa3;
+		--akzent-text: #10201b;
+		--live-grund: #1d332c;
+		--live-text: #7fd3ba;
+		--arbeit-grund: #33291a;
+		--arbeit-text: #d9b871;
+	}
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0 auto;
+	padding: clamp(2rem, 6vw, 5rem) 1.25rem 3rem;
+	max-width: 46rem;
+	background: var(--grund);
+	color: var(--text);
+	font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, sans-serif;
+	font-size: 1.0625rem;
+	line-height: 1.65;
+	-webkit-text-size-adjust: 100%;
+}
+
+a {
+	color: inherit;
+	text-decoration-color: var(--akzent);
+	text-underline-offset: 0.2em;
+}
+
+a:hover {
+	text-decoration-thickness: 2px;
+}
+
+/* Kopf */
+
+.kopf {
+	margin-bottom: clamp(2.5rem, 6vw, 4rem);
+}
+
+/* Name links, Sprachwahl rechts. Bei schmalen Fenstern rutscht die Sprachwahl
+   in die nächste Zeile, statt den Namen zu quetschen. */
+.kopf-zeile {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 1rem;
+	align-items: baseline;
+	justify-content: space-between;
+}
+
+.augenbraue {
+	margin: 0;
+	color: var(--text-leise);
+	font-size: 0.875rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.kopf h1 {
+	margin: 0.2em 0 0.4em;
+	font-size: clamp(2.25rem, 8vw, 3.25rem);
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+}
+
+/* Sprachwahl */
+
+.sprachwahl {
+	display: flex;
+	gap: 0.2rem;
+	font-size: 0.8125rem;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+}
+
+.sprachwahl a,
+.sprachwahl .sprachwahl-aktiv {
+	padding: 0.25em 0.6em;
+	border-radius: 6px;
+	text-decoration: none;
+}
+
+.sprachwahl a {
+	color: var(--text-leise);
+}
+
+.sprachwahl a:hover {
+	background: var(--linie);
+	color: var(--text);
+}
+
+/* Die aktive Sprache ist bewusst kein Link – ein Verweis auf die Seite, auf der
+   man schon steht, führt nirgendwohin. */
+.sprachwahl-aktiv {
+	background: var(--linie);
+	color: var(--text);
+}
+
+.vorspann {
+	margin: 0;
+	max-width: 34rem;
+	color: var(--text-leise);
+	font-size: 1.125rem;
+}
+
+/* Projektkarten */
+
+.projekte {
+	display: grid;
+	gap: 1.25rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.projekt {
+	padding: clamp(1.25rem, 4vw, 1.75rem);
+	border: 1px solid var(--linie);
+	border-radius: 14px;
+	background: var(--karte);
+}
+
+.projekt-kopf {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 0.75rem;
+	align-items: baseline;
+	margin-bottom: 0.6rem;
+}
+
+.projekt h2 {
+	margin: 0;
+	font-size: 1.375rem;
+	letter-spacing: -0.01em;
+}
+
+.projekt p {
+	margin: 0 0 0.75rem;
+}
+
+.status {
+	padding: 0.15em 0.6em;
+	border-radius: 999px;
+	background: var(--linie);
+	color: var(--text-leise);
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.status--live {
+	background: var(--live-grund);
+	color: var(--live-text);
+}
+
+.status--arbeit {
+	background: var(--arbeit-grund);
+	color: var(--arbeit-text);
+}
+
+.technik {
+	color: var(--text-leise);
+	font-size: 0.9375rem;
+}
+
+/* Verweise */
+
+.verweise {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+	margin-bottom: 0 !important;
+}
+
+.verweis {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
+	padding: 0.4em 0.95em;
+	border: 1px solid var(--linie);
+	border-radius: 8px;
+	font-size: 0.9375rem;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.verweis:hover {
+	border-color: var(--akzent);
+}
+
+.verweis--haupt {
+	border-color: var(--akzent);
+	background: var(--akzent);
+	color: var(--akzent-text);
+}
+
+.verweis--haupt:hover {
+	filter: brightness(1.08);
+}
+
+/* Zusatz am Verweis, z. B. „nur Admins" – gedämpft, damit der Verweis selbst
+   die Hauptsache bleibt. */
+.hinweis {
+	color: var(--text-leise);
+	font-size: 0.8125rem;
+	font-weight: 400;
+}
+
+.verweis--haupt .hinweis {
+	color: inherit;
+	opacity: 0.8;
+}
+
+/* Icons */
+
+/* Nur der Vorrat an <symbol>-Definitionen – nichts davon wird selbst gezeigt. */
+.icon-vorrat {
+	display: none;
+}
+
+/* Am Schriftgrad ausgerichtet (1em) und in Textfarbe, damit das Icon auf dem
+   gefüllten wie auf dem umrandeten Verweis stimmt. flex-shrink: 0 verhindert,
+   dass es bei knappem Platz zusammengedrückt wird. */
+.icon {
+	width: 1em;
+	height: 1em;
+	flex-shrink: 0;
+	fill: currentColor;
+}
+
+/* Fuß */
+
+.fuss {
+	margin-top: 3rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--linie);
+	color: var(--text-leise);
+	font-size: 0.9375rem;
+}
+
+.fuss p {
+	margin: 0;
+}
+
+.fuss-hinweis {
+	margin: 0.6rem 0 0;
+	font-size: 0.875rem;
+}
+
+.fuss-verweis {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
+	text-decoration: none;
+}
+
+.fuss-verweis:hover {
+	color: var(--text);
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
+}
+
+/* Sichtbarer Fokus für Tastaturbedienung – der Browser-Standard verschwindet
+   auf den farbigen Flächen. */
+a:focus-visible {
+	outline: 2px solid var(--akzent);
+	outline-offset: 3px;
+	border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.verweis {
+		transition: border-color 0.15s ease, filter 0.15s ease;
+	}
+}

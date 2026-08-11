@@ -1,0 +1,42 @@
+name: Deploy to Uberspace
+
+on:
+  push:
+    branches:
+      - main
+
+# Zwei schnell aufeinanderfolgende Pushes duerfen sich nicht ueberlappen.
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Deploy to Uberspace
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      # Kein Build-Schritt: die Seite ist statisches HTML/CSS und wird 1:1 gesynct.
+      # Nur der Inhalt von public/ geht auf den Server, nicht README/Workflows.
+      #
+      # ACHTUNG --delete: ~/html ist das DocumentRoot des Apache-Backends und wird
+      # zum Spiegel von public/. Alles andere, was dort liegt, wird geloescht.
+      # Dieser Workflow darf deshalb erst laufen, NACHDEM festival aus ~/html
+      # umgezogen ist (siehe README, Abschnitt "Einmalige Einrichtung").
+      #
+      # --chmod=D755,F644: sonst uebernimmt rsync die Rechte des Runners und der
+      # Webserver kommt nicht an die Dateien.
+      - name: rsync deployments
+        uses: burnett01/rsync-deployments@7.1.0
+        with:
+          switches: -avzr --delete --chmod=D755,F644
+          path: /public/
+          remote_path: /home/${{ secrets.UBERSPACE_USER }}/html/
+          remote_host: ${{ secrets.UBERSPACE_HOST }}
+          remote_user: ${{ secrets.UBERSPACE_USER }}
+          remote_key: ${{ secrets.DEPLOY_KEY_PRIVATE }}
