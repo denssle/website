@@ -1,15 +1,22 @@
+<?php
+// Der einzige dynamische Teil dieser Seite. Zählt den Aufruf und liefert den
+// Stand; null heißt, dass er sich nicht ermitteln ließ – dann bleibt die Zeile
+// im Fuß einfach weg.
+require __DIR__ . '/zaehler.php';
+$besuche = zaehler_stand();
+?>
 <!doctype html>
-<html lang="en">
+<html lang="de">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Dominik Hellweg – Projects</title>
+		<title>Dominik Hellweg – Projekte</title>
 		<meta
 			name="description"
-			content="An overview of my projects: a planner for private events and a Discord bot."
+			content="Übersicht über meine Projekte: ein Planer für private Veranstaltungen und ein Discord-Bot."
 		/>
 		<meta name="color-scheme" content="light dark" />
-		<link rel="stylesheet" href="../style.css" />
+		<link rel="stylesheet" href="style.css" />
 		<!-- hreflang verlangt absolute URLs. x-default zeigt auf die deutsche
 		     Fassung: sie ist der Standard, /en/ die Alternative. -->
 		<link rel="alternate" hreflang="de" href="https://enzlor.uber.space/" />
@@ -25,14 +32,14 @@
 		     wenn die Seite auf eine eigene Domain umzieht. -->
 		<meta property="og:type" content="website" />
 		<meta property="og:site_name" content="Dominik Hellweg" />
-		<meta property="og:title" content="Dominik Hellweg – Projects" />
+		<meta property="og:title" content="Dominik Hellweg – Projekte" />
 		<meta
 			property="og:description"
-			content="An overview of my projects: a planner for private events and a Discord bot."
+			content="Übersicht über meine Projekte: ein Planer für private Veranstaltungen und ein Discord-Bot."
 		/>
-		<meta property="og:url" content="https://enzlor.uber.space/en/" />
-		<meta property="og:locale" content="en_US" />
-		<meta property="og:locale:alternate" content="de_DE" />
+		<meta property="og:url" content="https://enzlor.uber.space/" />
+		<meta property="og:locale" content="de_DE" />
+		<meta property="og:locale:alternate" content="en_US" />
 		<meta name="twitter:card" content="summary" />
 		<link
 			rel="icon"
@@ -56,15 +63,15 @@
 				<p class="augenbraue">Dominik Hellweg</p>
 				<!-- Relative Ziele, damit der Umschalter auch beim lokalen Öffnen
 				     per file:// funktioniert. -->
-				<nav class="sprachwahl" aria-label="Language">
-					<a href="../" hreflang="de" lang="de">DE</a>
-					<span class="sprachwahl-aktiv" aria-current="true">EN</span>
+				<nav class="sprachwahl" aria-label="Sprache">
+					<span class="sprachwahl-aktiv" aria-current="true">DE</span>
+					<a href="en/" hreflang="en" lang="en">EN</a>
 				</nav>
 			</div>
-			<h1>Projects</h1>
+			<h1>Projekte</h1>
 			<p class="vorspann">
-				What runs here – a web application for planning events and a Discord
-				bot. Both open source.
+				Was hier so läuft – eine Webanwendung zur Veranstaltungsplanung und ein
+				Discord-Bot. Beides offener Quelltext.
 			</p>
 		</header>
 
@@ -76,19 +83,19 @@
 						<span class="status status--live">Live</span>
 					</div>
 					<p>
-						A web application for planning private events: schedule dates,
-						invite guests, keep track of who has accepted and who has declined.
-						Plus profiles, friendships and groups.
+						Webanwendung zur Planung privater Veranstaltungen: Termine anlegen,
+						Gäste einladen, Zu- und Absagen im Blick behalten. Dazu Profile,
+						Freundschaften und Gruppen.
 					</p>
 					<p class="technik">SvelteKit · TypeScript · MariaDB</p>
 					<p class="verweise">
 						<!-- Mit Schrägstrich: /festival antwortet sonst mit 308 auf /festival/ -->
-						<a class="verweis verweis--haupt" href="/festival/">Open the app</a>
+						<a class="verweis verweis--haupt" href="/festival/">Zur Anwendung</a>
 						<a class="verweis" href="https://github.com/denssle/festival">
 							<svg class="icon" aria-hidden="true" focusable="false">
 								<use href="#icon-github" />
 							</svg>
-							Source
+							Quelltext
 						</a>
 					</p>
 				</li>
@@ -96,14 +103,14 @@
 				<li class="projekt">
 					<div class="projekt-kopf">
 						<h2>Mechanischer Grüner Drache</h2>
-						<span class="status">Runs on Discord</span>
+						<span class="status">Läuft auf Discord</span>
 					</div>
 					<p>
-						A Discord bot for the server of
-						<a href="https://www.lotgd.de/">LotgD</a>. Ping-pong duels with a
-						monthly leaderboard, Twitch live notifications, shared distance
-						tracking for sports, a birthday calendar and a connection to the
-						game world.
+						Discord-Bot für den Server von
+						<a href="https://www.lotgd.de/">LotgD</a>. Ping-Pong-Duelle mit
+						monatlicher Bestenliste, Twitch-Live-Meldungen, gemeinsames
+						Sport-Tracking, Geburtstagskalender und eine Anbindung an die
+						Spielwelt.
 					</p>
 					<p class="technik">TypeScript · discord.js · Redis</p>
 					<p class="verweise">
@@ -114,13 +121,13 @@
 							<svg class="icon" aria-hidden="true" focusable="false">
 								<use href="#icon-github" />
 							</svg>
-							Source &amp; command reference
+							Quelltext &amp; Befehlsübersicht
 						</a>
 						<!-- Admin-Bereich hinter Discord-Login. rel="nofollow", weil die Seite
 						     selbst X-Robots-Tag: noindex setzt – das sollte hier nicht
 						     unterlaufen werden. -->
 						<a class="verweis" href="/config" rel="nofollow"
-							>Configuration <span class="hinweis">admins only</span></a
+							>Konfiguration <span class="hinweis">nur Admins</span></a
 						>
 					</p>
 				</li>
@@ -136,14 +143,23 @@
 					github.com/denssle
 				</a>
 			</p>
-			<!-- Ehrlicher Hinweis statt einer Enttäuschung hinter dem ersten Klick:
-			     die verlinkten Projekte selbst sind deutschsprachig. -->
-			<p class="fuss-hinweis">
-				Note: the linked projects themselves have German-language interfaces.
-			</p>
-			<nav class="fuss-navi" aria-label="Legal">
-				<a href="privacy.html">Privacy</a>
+			<nav class="fuss-navi" aria-label="Rechtliches">
+				<a href="datenschutz.html">Datenschutz</a>
 			</nav>
+<?php if ($besuche !== null): ?>
+			<!-- Die Ziffernkästchen sind Bild, kein Text: Vorlesewerkzeuge bekommen
+			     die Zahl daneben in einem Zug, statt sie Ziffer für Ziffer zu
+			     buchstabieren. -->
+			<p class="zaehler">
+				<span aria-hidden="true"
+					>Besuche seit August 2026 <?= zaehler_ziffern($besuche) ?></span
+				>
+				<span class="nur-vorlesen"
+					>Besuche seit August 2026:
+					<?= number_format($besuche, 0, ',', '.') ?></span
+				>
+			</p>
+<?php endif; ?>
 		</footer>
 	</body>
 </html>

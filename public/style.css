@@ -287,6 +287,59 @@ a:hover {
 	font-size: 0.875rem;
 }
 
+/* Besucherzähler */
+
+/* Ein Zitat der alten Zählwerke, aber im Ton der Seite: gedämpft, klein, ganz
+   unten. Er soll gefunden werden, nicht auffallen. */
+.zaehler {
+	margin: 0.9rem 0 0;
+	word-spacing: 0.15em;
+	font-size: 0.8125rem;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.zaehler-ziffer {
+	display: inline-block;
+	min-width: 1.1em;
+	padding: 0.15em 0.2em;
+	border: 1px solid var(--linie);
+	background: var(--karte);
+	color: var(--text);
+	font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+		monospace;
+	font-size: 0.9375rem;
+	line-height: 1.2;
+	text-align: center;
+}
+
+/* Die Kästchen stoßen aneinander wie am Kilometerzähler: nur außen rund, innen
+   fällt die doppelte Linie weg. */
+.zaehler-ziffer + .zaehler-ziffer {
+	margin-left: -1px;
+}
+
+.zaehler-ziffer:first-of-type {
+	border-radius: 5px 0 0 5px;
+}
+
+.zaehler-ziffer:last-of-type {
+	border-radius: 0 5px 5px 0;
+}
+
+/* Nur für Vorlesewerkzeuge: aus dem Bild genommen, aber nicht aus dem Baum –
+   display: none würde die Zahl auch dort verschwinden lassen. */
+.nur-vorlesen {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
 /* Rechtstexte */
 
 /* Fließtext statt Karten: hier zählt Lesbarkeit, nicht Übersicht. Die Breite

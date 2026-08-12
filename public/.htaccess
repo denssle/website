@@ -1,0 +1,11 @@
+# Die Startseiten sind index.php, nicht index.html. Die Reihenfolge hier
+# festzuschreiben kostet nichts und macht sie unabhaengig davon, was der Server
+# vorgibt.
+DirectoryIndex index.php index.html
+
+# zaehler.php wird von den Startseiten eingebunden und ist als eigene Adresse
+# sinnlos. Der Ausschluss gilt nur fuer Abrufe ueber den Webserver; das Einbinden
+# innerhalb von PHP bleibt davon unberuehrt.
+<Files "zaehler.php">
+	Require all denied
+</Files>

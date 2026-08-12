@@ -1,4 +1,8 @@
 # IDE-Konfiguration bleibt lokal
 .idea/
 
+# Zaehlerstand: gehoert dem Server, nicht dem Repository. Beim lokalen Testen
+# legt zaehler.php das Verzeichnis eine Ebene ueber public/ an - also hier.
+zaehler-daten/
+
 .DS_Store

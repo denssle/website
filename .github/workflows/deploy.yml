@@ -35,6 +35,10 @@ jobs:
       # --exclude=".well-known": das Verzeichnis stammt nicht aus public/ (ACME-
       # Challenges u. ae.) und darf von --delete nicht mitgenommen werden.
       #
+      # Der Zaehlerstand braucht keinen --exclude: er liegt eine Ebene ueber dem
+      # DocumentRoot (zaehler-daten/ neben html/) und damit ausserhalb dessen,
+      # was hier gespiegelt wird. Siehe README, Abschnitt Besucherzaehler.
+      #
       # --chmod=D755,F644: sonst uebernimmt rsync die Rechte des Runners und der
       # Webserver kommt nicht an die Dateien.
       - name: rsync deployments
