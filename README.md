@@ -38,8 +38,8 @@ Inhalt muss in **beiden** Dateien passieren.
 Die Sprache wird **nicht** automatisch erkannt: `/` ist immer deutsch, gewechselt
 wird über den Umschalter oben rechts.
 
-Ein Projekt ist bewusst **nicht** aufgeführt, solange das Projekt nicht
-öffentlich sein soll.
+Umgekehrt gehört **nicht** jedes Projekt hierher: was nicht öffentlich sein soll,
+wird hier auch nicht genannt – weder in der Übersicht noch in dieser Datei.
 
 ## Farben
 
