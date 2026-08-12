@@ -287,6 +287,44 @@ a:hover {
 	text-underline-offset: 0.2em;
 }
 
+/* Der Abstand liegt hier unten statt oben an der Icon-Reihe – die zieht sich mit
+   ihrem negativen Rand selbst hoch, was sonst die Hälfte davon fräße. Die
+   Auszeichnung mit .fuss davor, weil .fuss p den Rand sonst überstimmt. */
+.fuss .fuss-kontakt {
+	margin-bottom: 1.1rem;
+}
+
+/* Der negative Außenabstand nimmt den Innenabstand der Verweise zurück, damit
+   die Reihe trotz Trefferflächen bündig an der Fußkante beginnt. */
+.fuss-profile {
+	display: flex;
+	flex-wrap: wrap;
+	margin: -0.5rem;
+}
+
+/* Ohne Beschriftung bliebe nur ein Quadrat von 1em als Ziel – für den Finger zu
+   wenig. Das Icon selbst wächst, dazu Innenabstand für die Trefferfläche. */
+.fuss-verweis--nur-icon {
+	padding: 0.5rem;
+}
+
+.fuss-verweis--nur-icon .icon {
+	width: 1.25em;
+	height: 1.25em;
+}
+
+/* Unterstreichen läuft ohne Text ins Leere: die Farbe trägt den Hinweis. */
+.fuss-verweis--nur-icon:hover {
+	text-decoration: none;
+}
+
+/* Der hochgezogene Rand der Icon-Reihe fräße sonst den Abstand zur Navigation
+   weg – hier um genau diesen halben Rem wieder aufgefüllt. */
+.fuss-profile + .fuss-navi,
+.fuss-profile + .fuss-hinweis {
+	margin-top: 1.1rem;
+}
+
 .fuss-navi {
 	display: flex;
 	flex-wrap: wrap;
