@@ -175,98 +175,109 @@ $besuche = zaehler_stand();
 		</main>
 
 		<footer class="fuss">
-			<!-- Die Adresse steht ausgeschrieben da, nicht nur hinter dem Icon: wer
-			     schreiben will, soll sie kopieren können, ohne den Verweis zu
-			     öffnen. -->
-			<p class="fuss-kontakt">
-				<a class="fuss-verweis" href="mailto:dominik.hellweg@protonmail.com">
-					<svg class="icon" aria-hidden="true" focusable="false">
-						<use href="#icon-mail" />
-					</svg>
-					dominik.hellweg@protonmail.com
-				</a>
-			</p>
-			<!-- Nur Icons, keine Adressen: der Name des Ziels steckt im title für die
-			     Maus und im vorgelesenen Text für alle anderen, damit kein Verweis
-			     namenlos bleibt. rel="me" weist die Profile als dieselbe Person aus. -->
-			<nav class="fuss-profile" aria-label="Profiles elsewhere">
-				<a
-					class="fuss-verweis fuss-verweis--nur-icon"
-					href="https://github.com/denssle"
-					rel="me"
-					title="GitHub"
-				>
-					<svg class="icon" aria-hidden="true" focusable="false">
-						<use href="#icon-github" />
-					</svg>
-					<span class="nur-vorlesen">GitHub</span>
-				</a>
-				<a
-					class="fuss-verweis fuss-verweis--nur-icon"
-					href="https://steamcommunity.com/id/enzlor/"
-					rel="me"
-					title="Steam"
-				>
-					<svg class="icon" aria-hidden="true" focusable="false">
-						<use href="#icon-steam" />
-					</svg>
-					<span class="nur-vorlesen">Steam</span>
-				</a>
-				<a
-					class="fuss-verweis fuss-verweis--nur-icon"
-					href="https://open.spotify.com/user/1127376258"
-					rel="me"
-					title="Spotify"
-				>
-					<svg class="icon" aria-hidden="true" focusable="false">
-						<use href="#icon-spotify" />
-					</svg>
-					<span class="nur-vorlesen">Spotify</span>
-				</a>
-				<a
-					class="fuss-verweis fuss-verweis--nur-icon"
-					href="https://www.instagram.com/_enzlor/"
-					rel="me"
-					title="Instagram"
-				>
-					<svg class="icon" aria-hidden="true" focusable="false">
-						<use href="#icon-instagram" />
-					</svg>
-					<span class="nur-vorlesen">Instagram</span>
-				</a>
-				<a
-					class="fuss-verweis fuss-verweis--nur-icon"
-					href="https://www.linkedin.com/in/dominik-hellweg"
-					rel="me"
-					title="LinkedIn"
-				>
-					<svg class="icon" aria-hidden="true" focusable="false">
-						<use href="#icon-linkedin" />
-					</svg>
-					<span class="nur-vorlesen">LinkedIn</span>
-				</a>
-			</nav>
+			<!-- Zwei Zeilen statt vier gestapelter Blöcke: oben, wie man mich
+			     erreicht, unten das Rechtliche. Jeweils links die Hauptsache und
+			     rechts das Beiwerk – dasselbe Muster wie im Kopf, wo Name und
+			     Sprachwahl auseinanderrücken. -->
+			<div class="fuss-zeile">
+				<!-- Die Adresse steht ausgeschrieben da, nicht nur hinter dem Icon: wer
+				     schreiben will, soll sie kopieren können, ohne den Verweis zu
+				     öffnen. -->
+				<p class="fuss-kontakt">
+					<a class="fuss-verweis" href="mailto:dominik.hellweg@protonmail.com">
+						<svg class="icon" aria-hidden="true" focusable="false">
+							<use href="#icon-mail" />
+						</svg>
+						dominik.hellweg@protonmail.com
+					</a>
+				</p>
+				<!-- Nur Icons, keine Adressen: der Name des Ziels steckt im title für
+				     die Maus und im vorgelesenen Text für alle anderen, damit kein
+				     Verweis namenlos bleibt. rel="me" weist die Profile als dieselbe
+				     Person aus. -->
+				<nav class="fuss-profile" aria-label="Profiles elsewhere">
+					<a
+						class="fuss-verweis fuss-verweis--nur-icon"
+						href="https://github.com/denssle"
+						rel="me"
+						title="GitHub"
+					>
+						<svg class="icon" aria-hidden="true" focusable="false">
+							<use href="#icon-github" />
+						</svg>
+						<span class="nur-vorlesen">GitHub</span>
+					</a>
+					<a
+						class="fuss-verweis fuss-verweis--nur-icon"
+						href="https://steamcommunity.com/id/enzlor/"
+						rel="me"
+						title="Steam"
+					>
+						<svg class="icon" aria-hidden="true" focusable="false">
+							<use href="#icon-steam" />
+						</svg>
+						<span class="nur-vorlesen">Steam</span>
+					</a>
+					<a
+						class="fuss-verweis fuss-verweis--nur-icon"
+						href="https://open.spotify.com/user/1127376258"
+						rel="me"
+						title="Spotify"
+					>
+						<svg class="icon" aria-hidden="true" focusable="false">
+							<use href="#icon-spotify" />
+						</svg>
+						<span class="nur-vorlesen">Spotify</span>
+					</a>
+					<a
+						class="fuss-verweis fuss-verweis--nur-icon"
+						href="https://www.instagram.com/_enzlor/"
+						rel="me"
+						title="Instagram"
+					>
+						<svg class="icon" aria-hidden="true" focusable="false">
+							<use href="#icon-instagram" />
+						</svg>
+						<span class="nur-vorlesen">Instagram</span>
+					</a>
+					<a
+						class="fuss-verweis fuss-verweis--nur-icon"
+						href="https://www.linkedin.com/in/dominik-hellweg"
+						rel="me"
+						title="LinkedIn"
+					>
+						<svg class="icon" aria-hidden="true" focusable="false">
+							<use href="#icon-linkedin" />
+						</svg>
+						<span class="nur-vorlesen">LinkedIn</span>
+					</a>
+				</nav>
+			</div>
+
 			<!-- Ehrlicher Hinweis statt einer Enttäuschung hinter dem ersten Klick:
 			     die verlinkten Projekte selbst sind deutschsprachig. -->
 			<p class="fuss-hinweis">
 				Note: the linked projects themselves have German-language interfaces.
 			</p>
-			<nav class="fuss-navi" aria-label="Legal">
-				<a href="privacy.html">Privacy</a>
-			</nav>
+
+			<div class="fuss-zeile fuss-zeile--leise">
+				<nav class="fuss-navi" aria-label="Legal">
+					<a href="privacy.html">Privacy</a>
+				</nav>
 <?php if ($besuche !== null): ?>
-			<!-- Die Ziffernkästchen sind Bild, kein Text: Vorlesewerkzeuge bekommen
-			     die Zahl daneben in einem Zug, statt sie Ziffer für Ziffer zu
-			     buchstabieren. -->
-			<p class="zaehler">
-				<span aria-hidden="true"
-					>Visits since August 2026 <?= zaehler_ziffern($besuche) ?></span
-				>
-				<span class="nur-vorlesen"
-					>Visits since August 2026: <?= number_format($besuche) ?></span
-				>
-			</p>
+				<!-- Die Ziffernkästchen sind Bild, kein Text: Vorlesewerkzeuge bekommen
+				     die Zahl daneben in einem Zug, statt sie Ziffer für Ziffer zu
+				     buchstabieren. -->
+				<p class="zaehler">
+					<span aria-hidden="true"
+						>Visits since August 2026 <?= zaehler_ziffern($besuche) ?></span
+					>
+					<span class="nur-vorlesen"
+						>Visits since August 2026: <?= number_format($besuche) ?></span
+					>
+				</p>
 <?php endif; ?>
+			</div>
 		</footer>
 	</body>
 </html>

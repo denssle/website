@@ -269,8 +269,12 @@ a:hover {
 	margin: 0;
 }
 
-.fuss-hinweis {
-	margin: 0.6rem 0 0;
+/* Derselbe Abstand wie zur letzten Zeile, damit der Fuß einen gleichmäßigen
+   Takt bekommt. Der Wert ist einen halben Rem größer als er aussieht: die
+   Icon-Reihe darüber zieht sich mit ihrem negativen Rand um so viel zusammen.
+   Die Auszeichnung mit .fuss davor, weil .fuss p den Rand sonst überstimmt. */
+.fuss .fuss-hinweis {
+	margin: 1.4rem 0 0;
 	font-size: 0.875rem;
 }
 
@@ -287,15 +291,25 @@ a:hover {
 	text-underline-offset: 0.2em;
 }
 
-/* Der Abstand liegt hier unten statt oben an der Icon-Reihe – die zieht sich mit
-   ihrem negativen Rand selbst hoch, was sonst die Hälfte davon fräße. Die
-   Auszeichnung mit .fuss davor, weil .fuss p den Rand sonst überstimmt. */
-.fuss .fuss-kontakt {
-	margin-bottom: 1.1rem;
+/* Links die Hauptsache, rechts das Beiwerk – wie die Kopfzeile. Bei knappem
+   Platz bricht die rechte Hälfte um und stellt sich unter die linke, statt sich
+   zu quetschen. */
+.fuss-zeile {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem 1.5rem;
+	align-items: center;
+	justify-content: space-between;
+}
+
+/* Die zweite Zeile trägt nur noch Kleingedrucktes und rückt entsprechend ab. */
+.fuss-zeile--leise {
+	margin-top: 1.4rem;
 }
 
 /* Der negative Außenabstand nimmt den Innenabstand der Verweise zurück, damit
-   die Reihe trotz Trefferflächen bündig an der Fußkante beginnt. */
+   die Reihe bündig mit der Zeile abschließt statt um eine halbe Trefferfläche
+   eingerückt. */
 .fuss-profile {
 	display: flex;
 	flex-wrap: wrap;
@@ -318,27 +332,20 @@ a:hover {
 	text-decoration: none;
 }
 
-/* Der hochgezogene Rand der Icon-Reihe fräße sonst den Abstand zur Navigation
-   weg – hier um genau diesen halben Rem wieder aufgefüllt. */
-.fuss-profile + .fuss-navi,
-.fuss-profile + .fuss-hinweis {
-	margin-top: 1.1rem;
-}
-
 .fuss-navi {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0.3rem 1rem;
-	margin-top: 0.6rem;
 	font-size: 0.875rem;
 }
 
 /* Besucherzähler */
 
 /* Ein Zitat der alten Zählwerke, aber im Ton der Seite: gedämpft, klein, ganz
-   unten. Er soll gefunden werden, nicht auffallen. */
+   unten rechts. Er soll gefunden werden, nicht auffallen. Den Abstand nach oben
+   gibt die Zeile vor, in der er steht. */
 .zaehler {
-	margin: 0.9rem 0 0;
+	margin: 0;
 	word-spacing: 0.15em;
 	font-size: 0.8125rem;
 	letter-spacing: 0.04em;
