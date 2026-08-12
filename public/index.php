@@ -15,7 +15,8 @@ $besuche = zaehler_stand();
 			name="description"
 			content="Übersicht über meine Projekte: ein Planer für private Veranstaltungen und ein Discord-Bot."
 		/>
-		<meta name="color-scheme" content="light dark" />
+		<meta name="color-scheme" content="dark" />
+		<meta name="theme-color" content="#181818" />
 		<link rel="stylesheet" href="style.css" />
 		<!-- hreflang verlangt absolute URLs. x-default zeigt auf die deutsche
 		     Fassung: sie ist der Standard, /en/ die Alternative. -->

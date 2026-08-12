@@ -1,28 +1,29 @@
-/* Farben als Tokens, damit der Dunkelmodus nur die Werte tauscht und nicht die Regeln. */
-:root {
-	--grund: #fbfaf8;
-	--karte: #ffffff;
-	--text: #1c1b19;
-	--text-leise: #5d5a54;
-	--linie: #e3dfd8;
-	--akzent: #1f6f5c;
-	--akzent-text: #ffffff;
-	--live-grund: #e2f0ea;
-	--live-text: #1f6f5c;
-}
+/* Farben als Tokens. Die Werte stammen aus dem Bemalrezept für die Salamanders
+   (Citadel-Farben, Hex-Codes nach thepaintingledger.com) – der Kommentar hinter
+   jeder Zeile nennt die Dose.
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--grund: #16181a;
-		--karte: #1e2124;
-		--text: #eceae6;
-		--text-leise: #a3a09a;
-		--linie: #32363a;
-		--akzent: #5fbfa3;
-		--akzent-text: #10201b;
-		--live-grund: #1d332c;
-		--live-text: #7fd3ba;
-	}
+   Die Rollen folgen dem Vorbild: Schwarz trägt, Grün handelt, Gold ziert. Gold
+   ist deshalb bewusst NICHT für Flächen im Einsatz, sondern nur für Kanten,
+   Fokus und den Zähler – sonst wird aus Gold schnell Senf.
+
+   Die Seite ist nur noch dunkel: eine helle Fassung dieser Rüstung gibt es
+   nicht. Deshalb kein prefers-color-scheme mehr, dafür color-scheme: dark,
+   damit auch Scrollbalken und Bedienelemente des Browsers mitziehen. */
+:root {
+	color-scheme: dark;
+
+	--grund: #181818; /* Nuln Oil */
+	--karte: #231f20; /* Abaddon Black */
+	--text: #f5f5f0; /* White Scar */
+	--text-leise: #8a8c87; /* Dawnstone */
+	--linie: #4a5055; /* Eshin Grey */
+	--akzent: #285028; /* Waaagh! Flesh – die Rüstung selbst, Flächen */
+	--akzent-hell: #1a8c28; /* Warpstone Glow – Linien, Unterstreichungen */
+	--akzent-text: #f5f5f0; /* White Scar auf der Rüstung: 9,2:1 */
+	--gold: #c8952a; /* Retributor Armour */
+	--gold-hell: #c8a038; /* Liberator Gold – nur beim Überfahren */
+	--live-grund: #0a3818; /* Caliban Green */
+	--live-text: #60c830; /* Moot Green – das Kantenlicht */
 }
 
 *,
@@ -44,9 +45,11 @@ body {
 	-webkit-text-size-adjust: 100%;
 }
 
+/* Die Unterstreichung nimmt das hellere Grün: Waaagh! Flesh wäre auf schwarzem
+   Grund als dünne Linie kaum zu sehen. */
 a {
 	color: inherit;
-	text-decoration-color: var(--akzent);
+	text-decoration-color: var(--akzent-hell);
 	text-underline-offset: 0.2em;
 }
 
@@ -160,10 +163,12 @@ a:hover {
 	margin: 0 0 0.75rem;
 }
 
+/* Umrandet statt gefüllt: der graue Mittelton der Palette ist als Fläche zu
+   hell, um den gedämpften Text darauf noch lesbar zu tragen. */
 .status {
 	padding: 0.15em 0.6em;
+	border: 1px solid var(--linie);
 	border-radius: 999px;
-	background: var(--linie);
 	color: var(--text-leise);
 	font-size: 0.75rem;
 	font-weight: 600;
@@ -173,6 +178,7 @@ a:hover {
 }
 
 .status--live {
+	border-color: var(--live-grund);
 	background: var(--live-grund);
 	color: var(--live-text);
 }
@@ -204,17 +210,19 @@ a:hover {
 }
 
 .verweis:hover {
-	border-color: var(--akzent);
+	border-color: var(--gold);
 }
 
+/* Grüne Fläche, goldene Kante – die Rüstung mit ihrer Zier. */
 .verweis--haupt {
-	border-color: var(--akzent);
+	border-color: var(--gold);
 	background: var(--akzent);
 	color: var(--akzent-text);
 }
 
 .verweis--haupt:hover {
-	filter: brightness(1.08);
+	border-color: var(--gold-hell);
+	filter: brightness(1.15);
 }
 
 /* Zusatz am Verweis, z. B. „nur Admins" – gedämpft, damit der Verweis selbst
@@ -299,13 +307,16 @@ a:hover {
 	text-transform: uppercase;
 }
 
+/* Messing statt Leuchtschrift: die Ziffern nehmen das Gold auf, die Kästchen
+   bleiben in der neutralen Linie – sonst zieht der Zähler mehr Blicke auf sich
+   als die Projekte darüber. */
 .zaehler-ziffer {
 	display: inline-block;
 	min-width: 1.1em;
 	padding: 0.15em 0.2em;
 	border: 1px solid var(--linie);
 	background: var(--karte);
-	color: var(--text);
+	color: var(--gold);
 	font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
 		monospace;
 	font-size: 0.9375rem;
@@ -384,7 +395,7 @@ a:hover {
 /* Sichtbarer Fokus für Tastaturbedienung – der Browser-Standard verschwindet
    auf den farbigen Flächen. */
 a:focus-visible {
-	outline: 2px solid var(--akzent);
+	outline: 2px solid var(--gold);
 	outline-offset: 3px;
 	border-radius: 4px;
 }
