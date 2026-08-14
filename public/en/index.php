@@ -186,10 +186,11 @@ $besuche = zaehler_stand();
 					</p>
 					<p class="technik">SvelteKit · TypeScript · MariaDB</p>
 					<p class="verweise">
-						<!-- Noch kein Verweis auf eine laufende Fassung: Das Spiel steht ganz
-						     am Anfang und läuft nirgends öffentlich. -->
+						<!-- Mit Schrägstrich, wie beim Festival: /houses antwortet sonst mit
+						     308 auf /houses/ -->
+						<a class="verweis verweis--haupt" href="/houses/">Open the game</a>
 						<a
-							class="verweis verweis--haupt"
+							class="verweis"
 							href="https://github.com/denssle/houses-of-the-green-dragon"
 						>
 							<svg class="icon" aria-hidden="true" focusable="false">
