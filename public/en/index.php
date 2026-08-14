@@ -156,8 +156,15 @@ $besuche = zaehler_stand();
 					</p>
 					<p class="technik">TypeScript · discord.js · Redis</p>
 					<p class="verweise">
+						<!-- Admin-Bereich hinter Discord-Login. rel="nofollow", weil die Seite
+						     selbst X-Robots-Tag: noindex setzt – das sollte hier nicht
+						     unterlaufen werden. Kein Hauptverweis: Der Bot selbst läuft auf
+						     Discord, hier kommen nur Admins weiter. -->
+						<a class="verweis" href="/config" rel="nofollow"
+							>Configuration <span class="hinweis">admins only</span></a
+						>
 						<a
-							class="verweis verweis--haupt"
+							class="verweis"
 							href="https://github.com/denssle/mechanischer-gruener-drache"
 						>
 							<svg class="icon" aria-hidden="true" focusable="false">
@@ -165,12 +172,6 @@ $besuche = zaehler_stand();
 							</svg>
 							Source &amp; command reference
 						</a>
-						<!-- Admin-Bereich hinter Discord-Login. rel="nofollow", weil die Seite
-						     selbst X-Robots-Tag: noindex setzt – das sollte hier nicht
-						     unterlaufen werden. -->
-						<a class="verweis" href="/config" rel="nofollow"
-							>Configuration <span class="hinweis">admins only</span></a
-						>
 					</p>
 				</li>
 
