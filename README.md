@@ -31,9 +31,9 @@ public/
 
 **Beide Sprachfassungen sind eigenständige Dateien.** Seit dem Zähler liegt PHP
 auf dem Server, gemeinsame Bausteine wären also möglich – es bleibt trotzdem bei
-zwei vollständigen Dateien. Eine Seite mit zwei Projektkarten rechtfertigt keine
-Schablonen; wer eine Fassung liest, sieht sie ganz. Der Preis: eine Änderung am
-Inhalt muss in **beiden** Dateien passieren.
+zwei vollständigen Dateien. Eine Seite mit einer Handvoll Projektkarten
+rechtfertigt keine Schablonen; wer eine Fassung liest, sieht sie ganz. Der Preis:
+eine Änderung am Inhalt muss in **beiden** Dateien passieren.
 
 Die Sprache wird **nicht** automatisch erkannt: `/` ist immer deutsch, gewechselt
 wird über den Umschalter oben rechts.

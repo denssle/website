@@ -27,12 +27,12 @@ $domain = 'enzlor.uber.space'
 $fassungen = @(
 	@{
 		Auge  = 'P R O J E K T E'
-		Unter = 'Eine Webanwendung und ein Discord-Bot.'
+		Unter = 'Webanwendung, Discord-Bot und Browserspiel.'
 		Ziel  = Join-Path $wurzel 'public/vorschaubild.png'
 	},
 	@{
 		Auge  = 'P R O J E C T S'
-		Unter = 'A web app and a Discord bot.'
+		Unter = 'A web app, a Discord bot and a browser game.'
 		Ziel  = Join-Path $wurzel 'public/en/vorschaubild.png'
 	}
 )

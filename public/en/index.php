@@ -12,7 +12,7 @@ $besuche = zaehler_stand();
 		<title>Dominik Hellweg – Projects</title>
 		<meta
 			name="description"
-			content="An overview of my projects: a planner for private events and a Discord bot."
+			content="An overview of my projects: a planner for private events, a Discord bot and a browser game."
 		/>
 		<meta name="color-scheme" content="dark" />
 		<meta name="theme-color" content="#181818" />
@@ -37,7 +37,7 @@ $besuche = zaehler_stand();
 		<meta property="og:title" content="Dominik Hellweg – Projects" />
 		<meta
 			property="og:description"
-			content="An overview of my projects: a planner for private events and a Discord bot."
+			content="An overview of my projects: a planner for private events, a Discord bot and a browser game."
 		/>
 		<meta property="og:url" content="https://enzlor.uber.space/en/" />
 		<meta
@@ -49,7 +49,7 @@ $besuche = zaehler_stand();
 		<meta property="og:image:height" content="630" />
 		<meta
 			property="og:image:alt"
-			content="Dominik Hellweg – Projects. A web app and a Discord bot."
+			content="Dominik Hellweg – Projects. A web app, a Discord bot and a browser game."
 		/>
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:locale:alternate" content="de_DE" />
@@ -112,8 +112,8 @@ $besuche = zaehler_stand();
 			</div>
 			<h1>Projects</h1>
 			<p class="vorspann">
-				What runs here – a web application for planning events and a Discord
-				bot. Both open source.
+				What runs here – a web application for planning events, a Discord bot and
+				a browser game in the making. All open source.
 			</p>
 		</header>
 
@@ -171,6 +171,32 @@ $besuche = zaehler_stand();
 						<a class="verweis" href="/config" rel="nofollow"
 							>Configuration <span class="hinweis">admins only</span></a
 						>
+					</p>
+				</li>
+
+				<li class="projekt">
+					<div class="projekt-kopf">
+						<h2>Houses of the Green Dragon</h2>
+						<span class="status">In development</span>
+					</div>
+					<p>
+						A browser-based medieval game where you do not play a life but a
+						house: your character is mortal, and once they die, one of their
+						children takes over. Leave no heirs and the dynasty ends.
+					</p>
+					<p class="technik">SvelteKit · TypeScript · MariaDB</p>
+					<p class="verweise">
+						<!-- Noch kein Verweis auf eine laufende Fassung: Das Spiel steht ganz
+						     am Anfang und läuft nirgends öffentlich. -->
+						<a
+							class="verweis verweis--haupt"
+							href="https://github.com/denssle/houses-of-the-green-dragon"
+						>
+							<svg class="icon" aria-hidden="true" focusable="false">
+								<use href="#icon-github" />
+							</svg>
+							Source &amp; concept
+						</a>
 					</p>
 				</li>
 			</ul>

@@ -13,7 +13,7 @@ $besuche = zaehler_stand();
 		<title>Dominik Hellweg – Projekte</title>
 		<meta
 			name="description"
-			content="Übersicht über meine Projekte: ein Planer für private Veranstaltungen und ein Discord-Bot."
+			content="Übersicht über meine Projekte: ein Planer für private Veranstaltungen, ein Discord-Bot und ein Browserspiel."
 		/>
 		<meta name="color-scheme" content="dark" />
 		<meta name="theme-color" content="#181818" />
@@ -39,7 +39,7 @@ $besuche = zaehler_stand();
 		<meta property="og:title" content="Dominik Hellweg – Projekte" />
 		<meta
 			property="og:description"
-			content="Übersicht über meine Projekte: ein Planer für private Veranstaltungen und ein Discord-Bot."
+			content="Übersicht über meine Projekte: ein Planer für private Veranstaltungen, ein Discord-Bot und ein Browserspiel."
 		/>
 		<meta property="og:url" content="https://enzlor.uber.space/" />
 		<meta
@@ -51,7 +51,7 @@ $besuche = zaehler_stand();
 		<meta property="og:image:height" content="630" />
 		<meta
 			property="og:image:alt"
-			content="Dominik Hellweg – Projekte. Eine Webanwendung und ein Discord-Bot."
+			content="Dominik Hellweg – Projekte. Eine Webanwendung, ein Discord-Bot und ein Browserspiel."
 		/>
 		<meta property="og:locale" content="de_DE" />
 		<meta property="og:locale:alternate" content="en_US" />
@@ -116,8 +116,8 @@ $besuche = zaehler_stand();
 			</div>
 			<h1>Projekte</h1>
 			<p class="vorspann">
-				Was hier so läuft – eine Webanwendung zur Veranstaltungsplanung und ein
-				Discord-Bot. Beides offener Quelltext.
+				Was hier so läuft – eine Webanwendung zur Veranstaltungsplanung, ein
+				Discord-Bot und ein Browserspiel im Werden. Alles offener Quelltext.
 			</p>
 		</header>
 
@@ -175,6 +175,33 @@ $besuche = zaehler_stand();
 						<a class="verweis" href="/config" rel="nofollow"
 							>Konfiguration <span class="hinweis">nur Admins</span></a
 						>
+					</p>
+				</li>
+
+				<li class="projekt">
+					<div class="projekt-kopf">
+						<h2>Houses of the Green Dragon</h2>
+						<span class="status">In Entwicklung</span>
+					</div>
+					<p>
+						Browserbasiertes Mittelalter-Spiel, in dem man kein Leben spielt,
+						sondern ein Haus: Der eigene Charakter ist sterblich, nach seinem Tod
+						übernimmt eines seiner Kinder. Wer keine Nachkommen hinterlässt,
+						dessen Dynastie erlischt.
+					</p>
+					<p class="technik">SvelteKit · TypeScript · MariaDB</p>
+					<p class="verweise">
+						<!-- Noch kein Verweis auf eine laufende Fassung: Das Spiel steht ganz
+						     am Anfang und läuft nirgends öffentlich. -->
+						<a
+							class="verweis verweis--haupt"
+							href="https://github.com/denssle/houses-of-the-green-dragon"
+						>
+							<svg class="icon" aria-hidden="true" focusable="false">
+								<use href="#icon-github" />
+							</svg>
+							Quelltext &amp; Konzept
+						</a>
 					</p>
 				</li>
 			</ul>
